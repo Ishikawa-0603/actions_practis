@@ -11,5 +11,6 @@ jobs:
             - name: hello world test actions
               id: hello
               run: 
-                echo "Hello world"
-                echo "actions practis"
+                echo "Hello world ${NAME}"
+              env:
+                NAME: ryo.ishikawa
