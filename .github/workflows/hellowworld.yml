@@ -8,4 +8,8 @@ jobs:
         name: Hello world job
         runs-on: ubuntu-latest
         steps:
-         - run: echo "Hello world !!"
+            - name: hello world test actions
+              id: hello
+              run: 
+                echo "Hello world"
+                echo "actions practis"
