@@ -13,3 +13,8 @@ jobs:
       - name: cat workflows
         id: cat
         run: cat .github/workflows/hellowworld.yml
+      - name: echo hello myname
+        id: echo_helloworld
+        run: echo "Hello ${NAME}"
+        env:
+          NAME: "ryo ishikawa"
