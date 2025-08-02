@@ -4,13 +4,12 @@ on:
     push:
 
 jobs:
-    sample:
-        name: Hello world job
-        runs-on: ubuntu-latest
-        steps:
-            - name: hello world test actions
-              id: hello
-              run: 
-                echo "Hello world ${NAME}"
-              env:
-                NAME: ryo.ishikawa
+  sample:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        id: checkout
+        uses: actions/checkout@v4
+      - name: cat workflows
+        id: cat
+        run: cat .github/workflows/hellowworld.yml
