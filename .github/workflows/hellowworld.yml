@@ -1,20 +1,10 @@
-name: "Hello world"
+name: Hello
 
-on: 
-    push:
+on: push
 
 jobs:
-  sample:
-    runs-on: ubuntu-latest
+  hello:
+    runs-on: ubunut-latest
     steps:
-      - name: Checkout repository
-        id: checkout
-        uses: actions/checkout@v4
-      - name: cat workflows
-        id: cat
-        run: cat .github/workflows/hellowworld.yml
-      - name: echo hello myname
-        id: echo_helloworld
-        run: echo "Hello ${NAME}"
-        env:
-          NAME: "ryo ishikawa"
+      - run: echo "Hello World"
+      - uses: actions/checkout@v4
