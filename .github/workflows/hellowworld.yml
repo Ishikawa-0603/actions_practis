@@ -3,11 +3,13 @@ name: ZZZZZZZZZZ
 on: push
 jobs:
   XXXXXXXXXXXXXX:
+    name: job XXXXXXXXXXX
     runs-on: ubuntu-latest
     steps:
       - name: YYYYYYYYYYYYYYY
         run: echo "Hello World"
   AAAAAAAAAAAAAA:
+    name: job AAAAAAAAAAA
     runs-on: ubuntu-latest
     steps:
       - name: BBBBBBBBBBBBBB
