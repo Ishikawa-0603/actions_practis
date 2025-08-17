@@ -1,15 +1,9 @@
-name: Hello
+name: ZZZZZZZZZZ
 
 on: push
 jobs:
-  print:
+  XXXXXXXXXXXXXX:
     runs-on: ubuntu-latest
     steps:
-      - run: exit 1
-      - run: echo "hello failure"
-        if: ${{ failure()}}
-      - run: exit 1
-      - run: echo "hello always"
-        if: ${{ always()}}
-      - run: echo "hello success"
-        if: ${{ success()}}
+      - name: YYYYYYYYYYYYYYY
+        run: echo "Hello World"
