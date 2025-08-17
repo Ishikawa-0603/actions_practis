@@ -5,11 +5,9 @@ jobs:
   print:
     runs-on: ubuntu-latest
     steps:
-      - run: printenv | grep FUNC
-        env:
-          FUNC_CONTAINS: ${{ contains('hello', 'll')}}
-          FUNC_STARTSWITH: ${{ startsWith('hello', 'he') }}
-          FUNC_ENDSWITH: ${{ endsWith('hello', 'lo') }}
-          FUNC_ENDSWITH1: ${{ endsWith('hello', 'l') }}
-          FUNC_FORMAT: ${{ format('{0}, {1}.', 'Hello','world') }}
-          FUNC_JOIN: ${{ join(github.event.*.html_url, ',') }}
+      - run: exit 1
+      - run: echo "hello failure"
+        if: ${{ failure()}}
+      - run: exit 1
+      - run: echo "hello always"
+        if: ${{ always()}}
