@@ -7,3 +7,8 @@ jobs:
     steps:
       - name: YYYYYYYYYYYYYYY
         run: echo "Hello World"
+  AAAAAAAAAAAAAA:
+    runs-on: ubuntu-latest
+    steps:
+      - name: BBBBBBBBBBBBBB
+        run: echo "Hello World"
