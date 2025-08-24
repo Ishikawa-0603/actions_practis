@@ -17,3 +17,7 @@ jobs:
         env: 
           RESULT2: ${{ steps.source2.outputs.result2}}
         run: echo ${RESULT2}
+      - id: source3
+        run: echo "RESULT3=Hello World" >> "${GITHUB_ENV}"
+      - id : target3
+        run: echo ${RESULT3}
