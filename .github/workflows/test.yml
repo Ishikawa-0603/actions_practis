@@ -12,5 +12,5 @@ jobs:
       - uses: actions/setup-go@v5
         with:
           go-version: 1.24.1
-      - run: go --versions
+      - run: go version
       - run: go test go/excellent/*.go
