@@ -12,9 +12,9 @@ inputs:
 
 outputs:
   dump-date:
-    value: ${{ steps.current.outputs.dump-date}}
-  dump-test-input-word:
-    value: ${{ steps.test-input.outputs.dump-test-input-word}}
+    value: ${{ steps.current.outputs.date }}
+    description: test date
+  
 
 runs:
   using: composite
@@ -27,10 +27,5 @@ runs:
         CONTEXT: ${{ toJson(github) }}
       shell: bash
     - id: current
-      run: echo "dump-date=$(date)" >> $GITHUB_OUTPUT
-      shell: bash
-    - id: test-input
-      run: echo "dump-test-input-word=$testinput" >> $GITHUB_OUTPUT
-      env:
-        testinput: ${{ inputs.test-input-word}}
+      run: echo "date=$(date)" >> $GITHUB_OUTPUT
       shell: bash
