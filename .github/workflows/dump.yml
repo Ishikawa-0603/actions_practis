@@ -10,8 +10,8 @@ jobs:
         with:
           enable-context: 'true'
           test-input-word: 'test_message'
-      - run: echo ${DATE}
-        env:
+      - run: echo "${DATE}"
+        env: 
           DATE: ${{ steps.dump.outputs.dump-date }}
       - run: echo ${TEST_WORD}
         env:
