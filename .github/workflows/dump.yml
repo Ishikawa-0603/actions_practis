@@ -7,9 +7,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - uses: ./.github/actions/dump
-        with:
-          enable-context: 'true'
-          test-input-word: 'test_message'
+        id: dump
       - run: echo "${DATE}"
         env: 
-          DATE: ${{ steps.dump.outputs.dump-date }}
+          DATE: ${{ steps.dump.outputs.dumped-date }}
