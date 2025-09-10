@@ -30,7 +30,7 @@ runs:
       run: echo "dump-date=$(date)" >> $GITHUB_OUTPUT
       shell: bash
     - id: test-input
-      run: echo "dump-test-input-word=$(testinput)" >> $GITHUB_OUTPUT
+      run: echo "dump-test-input-word=$testinput" >> $GITHUB_OUTPUT
       env:
         testinput: ${{ inputs.test-input-word}}
       shell: bash

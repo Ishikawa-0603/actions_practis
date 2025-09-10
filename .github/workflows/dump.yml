@@ -12,7 +12,7 @@ jobs:
           test-input-word: 'test_message'
       - run: echo ${DATE}
         env:
-          DATE: ${{ steps.current.outputs.dump-date }}
+          DATE: ${{ steps.dump.outputs.dump-date }}
       - run: echo ${TEST_WORD}
         env:
-          TEST_WORD: ${{ steps.test-input.outputs.dump-test-input-word }}
+          TEST_WORD: ${{ steps.dump.outputs.dump-test-input-word }}
