@@ -27,7 +27,7 @@ runs:
         CONTEXT: ${{ toJson(github) }}
       shell: bash
     - id: current
-      run: echo dump-date=$(date) >> $GITHUB_OUTPUT
+      run: echo "dump-date=$(date)" >> $GITHUB_OUTPUT
       shell: bash
     - id: test-input
       run: echo "dump-test-input-word=$(testinput)" >> $GITHUB_OUTPUT
