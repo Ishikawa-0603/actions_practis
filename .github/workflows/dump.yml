@@ -8,6 +8,11 @@ jobs:
       - uses: actions/checkout@v4
       - uses: ./.github/actions/dump
         id: dump
+        with:
+          test-input-word: "hello messages"
       - run: echo "${DATE}"
         env: 
           DATE: ${{ steps.dump.outputs.dumped-date }}
+      - run: echo "${WORD}"
+        env:
+          WORD: ${{ steps.dump.outputs.dumped-test-input-word }}
