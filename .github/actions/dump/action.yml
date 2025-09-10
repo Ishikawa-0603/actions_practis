@@ -1,0 +1,35 @@
+name: Dump
+description: Dump the context and date
+
+inputs:
+  enable-context:
+    default: 'true'
+    required: false
+    description: Enable context
+  test-input-word:
+    required: true
+    description: test input word
+
+outputs:
+  dump-date:
+    value: ${{ steps.current.outputs.dump-date}}
+  dump-test-input-word:
+    value: ${{ steps.test-input.outputs.dump-test-input-word}}
+
+runs:
+  using: composite
+  steps:
+    - run: printenv | sort
+      shell: bash
+    - run: echo "${CONTEXT}"
+      if: ${{ inputs.enable-context == 'true'}}
+      env:
+        CONTEXT: ${{ toJson(github) }}
+      shell: bash
+    - id: current
+      run: echo dump-date=$(date) >> $GITHUB_OUTPUT
+      shell: bash
+    - id: test-input
+      run: echo "dump-test-input-word=$(testinput)" >> $GITHUB_OUTPUT
+      env:
+        testinput: ${{ inputs.test-input-word}}
