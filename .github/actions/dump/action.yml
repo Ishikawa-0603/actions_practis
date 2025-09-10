@@ -12,6 +12,6 @@ outputs:
 runs:
   using: composite
   steps:
-    id: current
-    shell: bash
-    run: echo "date=$(date)" >> ${GITHUB_OUTPUT}
+    - id: current
+      shell: bash
+      run: echo "date=$(date)" >> ${GITHUB_OUTPUT}
