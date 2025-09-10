@@ -33,3 +33,4 @@ runs:
       run: echo "dump-test-input-word=$(testinput)" >> $GITHUB_OUTPUT
       env:
         testinput: ${{ inputs.test-input-word}}
+      shell: bash
