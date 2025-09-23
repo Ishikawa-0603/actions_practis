@@ -10,4 +10,4 @@ jobs:
   run:
     runs-on: ubuntu-latest
     steps:
-      - run: echo "{{ inputs.test_variable }}"
+      - run: echo "${{ inputs.test_variable }}"
