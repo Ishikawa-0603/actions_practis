@@ -1,7 +1,13 @@
 name: practis actions
-on: push
+on: 
+  workflow_dispatch:
+    inputs:
+      test_variable:
+        type: string
+        required: true
+        description: "input test variable"
 jobs:
-  hello:
+  run:
     runs-on: ubuntu-latest
     steps:
-      - run: echo "hello world"
+      - run: echo "{{ inputs.test_variable }}"
