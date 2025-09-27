@@ -1,13 +1,11 @@
-name: practis actions
-on: 
-  workflow_dispatch:
-    inputs:
-      test_variable:
-        type: string
-        required: true
-        description: "input test variable"
+name: Practice Function
+on: [push]
 jobs:
-  run:
+  compare:
     runs-on: ubuntu-latest
     steps:
-      - run: echo "${{ inputs.test_variable }}"
+      - run: printenv | grep '_FUNC'
+        env:
+          CONTAINS_FUNC: ${{ contains('Hello', 'ell')}}
+          STARTS_WITH_FUNC: ${{ startsWith('Hello', 'He')}}
+          ENDS_WITH_FUNC: ${{ endsWith('Hello', 'lo')}}
